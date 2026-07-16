@@ -1,3 +1,14 @@
+---
+title: AI Dermatologist
+emoji: 🩺
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 6.20.0
+app_file: app.py
+pinned: false
+---
+
 # AI Medical Doctor Backend
 
 A modular Python backend for the AI Medical Doctor assistant, initialized and managed using the `uv` tool.
