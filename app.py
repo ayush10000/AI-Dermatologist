@@ -3,6 +3,21 @@ import os
 import gradio as gr
 from dotenv import load_dotenv
 
+# Hugging Face ZeroGPU compatibility
+try:
+    import spaces
+except ImportError:
+    # Dummy fallback decorator for local development
+    class spaces:
+        @staticmethod
+        def GPU(func):
+            return func
+
+@spaces.GPU
+def dummy_gpu_trigger():
+    """Dummy function to satisfy Hugging Face ZeroGPU startup check."""
+    pass
+
 # Import functions from our modules
 from voice_of_the_patient import transcribe_patient_voice
 from Brain_Of_The_Docter import brain_of_the_doctor
